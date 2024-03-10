@@ -71,7 +71,7 @@ public class LibroController {
 	}
 	
 	
-	@GetMapping("/edit/{id}")
+	@GetMapping("/edit/{idLibro}")
 	public String edit(@PathVariable Long idLibro, Model model) {
 		
 		Libro libro = libroService.getLibrosById(idLibro);
@@ -106,8 +106,8 @@ public class LibroController {
 	}
 	
 	@GetMapping("/delete/{idLibro}")
-	public String deleteLibro(@PathVariable Long id, Model model) {
-	    libroService.deleteLibro(id);
+	public String deleteLibro(@PathVariable Long idLibro, Model model) {
+	    libroService.deleteLibro(idLibro);
 
 	    model.addAttribute("libros", libroService.getAllLibros());
 	    model.addAttribute("generos", generoService.getAllGeneros());
